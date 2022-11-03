@@ -29,7 +29,7 @@ steps:
     args: 
     - '-c'
     - |
-        if [ -d "environments/gke/" ]; then
+        if [ -d "terraform/gke/" ]; then
           cd terraform/gke
           terraform init
         else
