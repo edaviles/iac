@@ -29,8 +29,8 @@ steps:
   args: 
   - '-c'
   - |
-      if [ -d "terraform/gke/$BRANCH_NAME/" ]; then
-        cd terraform/gke/$BRANCH_NAME
+      if [ -d "terraform/gke/" ]; then
+        cd terraform/gke
         terraform init
       else
         for dir in terraform/gke/*/
@@ -53,11 +53,11 @@ steps:
   args: 
   - '-c'
   - | 
-      if [ -d "terraform/gke/$BRANCH_NAME/" ]; then
-        cd terraform/gke/$BRANCH_NAME
+      if [ -d "terraform/gke/" ]; then
+        cd terraform/gke
         terraform plan
       else
-        for dir in environments/*/
+        for dir in terraform/gke/*/
         do 
           cd ${dir}   
           env=${dir%*/}
